@@ -8,8 +8,16 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body ng-app="Tweeter">
     <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="col-lg-6">
+            <div class="input-group searchbar navbar-form navbar-left">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                </span>
+                <input type="text" class="form-control" placeholder="Search for a Tweet..">
+            </div>
+        </div>
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,12 +25,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Tweeter", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
             </div>
             <div class="navbar-collapse collapse">
-                <div class="navbar-left">
-                    <button class="glyphicon glyphicon-search"></button> <input type="search" value="search" />
-                </div>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
